@@ -1,0 +1,16 @@
+<ion-view view-title="Book">
+  <ion-content scroll="false">
+
+    <div class="left">
+      <div ng-repeat="chapter in chapters" class="chapter" ng-class="chapter" ng-click="goTo(chapter)"><div>/{{chapter}}/</div></div>
+    </div>
+    <div class="right">
+      <ion-content>
+        <ion-item collection-repeat="page in pages" ng-class="page.chapter">
+          Chapter: /{{page.chapter}}/ P{{page.page}}
+        </ion-item>
+      </ion-content>
+    </div>
+
+  </ion-content>
+</ion-view>

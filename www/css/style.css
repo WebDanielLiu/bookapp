@@ -1,0 +1,68 @@
+/* Empty. Add your own CSS if you like */
+
+
+.left {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 48px;
+}
+
+.right {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 327px;
+}
+
+.chapter {
+    height: 11.11111%;
+    position: relative;
+}
+
+.chapter>div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.intro {
+    background-color: #ffb049;
+}
+
+.l {
+    background-color: #a2ff9b;
+}
+
+.ee {
+    background-color: #62e6ff;
+}
+
+.v {
+    background-color: #d388ff;
+}
+
+.th {
+    background-color: #ff49b8;
+}
+
+.e {
+    background-color: #45ffdd;
+}
+
+.a {
+    background-color: #ffff83;
+}
+
+.oo {
+    background-color: #0910ff;
+}
+
+.r {
+    background-color: #e615ff;
+}
