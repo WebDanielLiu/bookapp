@@ -1,8 +1,43 @@
 angular.module('starter.controllers', [])
 
-.controller('BookCtrl', function($scope, $ionicModal) {
+.controller('BookCtrl', function($scope, $ionicModal, $ionicScrollDelegate) {
 
-  var chapters = ['intro', 'l', 'ee', 'v', 'th', 'e', 'a', 'oo', 'r'];
+  var itemHeight = 42;
+  $scope.onscroll = function() {
+    var top = $ionicScrollDelegate.getScrollPosition().top,
+        idx = Math.floor(Math.floor(top / itemHeight) / 20);
+
+    console.log(idx)
+    chapters.forEach(function(ch, i) {
+        ch.current = i == idx;
+    });
+    if (idx < 0) {
+      idx = 0;
+    }
+    chapters[idx].current = true;
+    $scope.$apply();
+  };
+
+  var chapters = [{
+    name: 'intro',
+    current: true
+  }, {
+    name: 'l'
+  }, {
+    name: 'ee'
+  }, {
+    name: 'v'
+  }, {
+    name: 'th'
+  }, {
+    name: 'e'
+  }, {
+    name: 'a'
+  }, {
+    name: 'oo'
+  }, {
+    name: 'r'
+  }];
   $scope.chapters = chapters;
 
   var pages = [];
@@ -16,7 +51,7 @@ angular.module('starter.controllers', [])
   $scope.pages = pages;
 
   $scope.goTo = function(chapter) {
-    alert(chapter)
+    $ionicScrollDelegate.scrollTo(0, chapters.indexOf(chapter) * 20 * itemHeight);
   };
 
   // Form data for the login modal

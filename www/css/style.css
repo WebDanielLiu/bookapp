@@ -7,7 +7,7 @@
     top: 0;
     bottom: 0;
     height: 100%;
-    width: 48px;
+    width: 15%;
 }
 
 .right {
@@ -16,12 +16,22 @@
     top: 0;
     bottom: 0;
     height: 100%;
-    width: 327px;
+    /*width: 327px;*/
+    left: 15%;
 }
 
 .chapter {
     height: 11.11111%;
     position: relative;
+
+  border-right: grey solid 1px;
+}
+
+.chapter.current-chapter {
+  border-right: none;
+  border-top: grey solid 1px;
+  border-bottom: grey solid 1px;
+    font-weight: bold;
 }
 
 .chapter>div {
@@ -31,38 +41,41 @@
     transform: translate(-50%, -50%);
 }
 
-.intro {
-    background-color: #ffb049;
+.item {
+    padding: 10px;
 }
+/*.intro {*/
+    /*background-color: #ffb049;*/
+/*}*/
 
-.l {
-    background-color: #a2ff9b;
-}
+/*.l {*/
+    /*background-color: #a2ff9b;*/
+/*}*/
 
-.ee {
-    background-color: #62e6ff;
-}
+/*.ee {*/
+    /*background-color: #62e6ff;*/
+/*}*/
 
-.v {
-    background-color: #d388ff;
-}
+/*.v {*/
+    /*background-color: #d388ff;*/
+/*}*/
 
-.th {
-    background-color: #ff49b8;
-}
+/*.th {*/
+    /*background-color: #ff49b8;*/
+/*}*/
 
-.e {
-    background-color: #45ffdd;
-}
+/*.e {*/
+    /*background-color: #45ffdd;*/
+/*}*/
 
-.a {
-    background-color: #ffff83;
-}
+/*.a {*/
+    /*background-color: #ffff83;*/
+/*}*/
 
-.oo {
-    background-color: #0910ff;
-}
+/*.oo {*/
+    /*background-color: #0910ff;*/
+/*}*/
 
-.r {
-    background-color: #e615ff;
-}
+/*.r {*/
+    /*background-color: #e615ff;*/
+/*}*/
