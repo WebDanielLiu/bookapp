@@ -1,13 +1,13 @@
 angular.module('starter.controllers', [])
 
-.controller('BookCtrl', function($scope, $ionicModal, $ionicScrollDelegate) {
+.controller('BookCtrl', function($scope, $ionicScrollDelegate) {
 
-  var itemHeight = 42;
+  var itemHeight = 54;
   $scope.onscroll = function() {
     var top = $ionicScrollDelegate.getScrollPosition().top,
         idx = Math.floor(Math.floor(top / itemHeight) / 20);
 
-    console.log(idx)
+    //console.log(idx)
     chapters.forEach(function(ch, i) {
         ch.current = i == idx;
     });
@@ -53,25 +53,11 @@ angular.module('starter.controllers', [])
   $scope.goTo = function(chapter) {
     $ionicScrollDelegate.scrollTo(0, chapters.indexOf(chapter) * 20 * itemHeight);
   };
+})
 
-  // Form data for the login modal
-  $scope.loginData = {};
-
-  // Create the login modal that we will use later
-  $ionicModal.fromTemplateUrl('templates/login.html', {
-    scope: $scope
-  }).then(function(modal) {
-    $scope.modal = modal;
-  });
-
-  // Triggered in the login modal to close it
-  $scope.closeLogin = function() {
-    $scope.modal.hide();
-  };
-
-  // Open the login modal
-  $scope.login = function() {
-    $scope.modal.show();
+.controller('PageCtrl', function($scope, $rootScope) {
+  $scope.play = function() {
+    $rootScope.loginWin.show();
   };
 })
 

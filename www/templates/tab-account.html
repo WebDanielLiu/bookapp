@@ -1,9 +1,39 @@
-<ion-view view-title="Account">
-  <ion-content>
-    <ion-list>
-    <ion-toggle  ng-model="settings.enableFriends">
-        Enable Friends
-    </ion-toggle>
-    </ion-list>
-  </ion-content>
+<ion-view title="Account">
+    <ion-content padding="false" class="has-header">
+        <div class="button-bar"></div>
+        <form>
+            <ion-list>
+                <ion-item class="item-thumbnail-left">
+                    <img src="img/ionic.png">
+                    <h2>Aaron</h2>
+                    <p>englishfun</p>
+                </ion-item>
+                <ion-item>My Wallet 我的钱包</ion-item>
+                <ion-item>My Progress 我的进度</ion-item>
+                <ion-item>Item 3</ion-item>
+            </ion-list>
+            <ion-radio>Radio</ion-radio>
+            <label class="item item-input">
+                <span class="input-label">Input</span>
+                <input type="text" placeholder="">
+            </label>
+            <label class="item item-select">
+                <span class="input-label">Input</span>
+                <select></select>
+            </label>
+            <div style="line-height: 250px; border: 1px solid rgb(238, 238, 238); border-radius: 3px; text-align: center; width: 100%; height: auto; background-color: rgb(255, 255, 255);">
+                <i class="icon ion-image" style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;"></i>
+            </div>
+        </form>
+    </ion-content>
 </ion-view>
+
+<!--<ion-view view-title="Account">-->
+  <!--<ion-content>-->
+    <!--<ion-list>-->
+    <!--<ion-toggle  ng-model="settings.enableFriends">-->
+        <!--Enable Friends-->
+    <!--</ion-toggle>-->
+    <!--</ion-list>-->
+  <!--</ion-content>-->
+<!--</ion-view>-->

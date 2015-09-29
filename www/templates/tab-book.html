@@ -6,7 +6,7 @@
     </div>
     <div class="right">
       <ion-content on-scroll="onscroll()">
-        <ion-item collection-repeat="page in pages" ng-class="page.chapter">
+        <ion-item collection-repeat="page in pages" ng-class="page.chapter" href="#/tab/book/{{page.page}}">
           Chapter: /{{page.chapter.name}}/ P{{page.page}}
         </ion-item>
       </ion-content>
