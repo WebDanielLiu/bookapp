@@ -1,5 +1,9 @@
 angular.module('starter.controllers', [])
 
+.controller('WelcomeCtrl', function($scope) {
+
+})
+
 .controller('BookCtrl', function($scope, $ionicScrollDelegate) {
 
   var itemHeight = 54;
