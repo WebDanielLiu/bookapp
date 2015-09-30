@@ -1,7 +1,13 @@
 angular.module('starter.controllers', [])
 
-.controller('WelcomeCtrl', function($scope) {
+.controller('WelcomeCtrl', function($scope, $rootScope, $state) {
+  $scope.login = function() {
+    $rootScope.loginWin.show();
+  };
 
+  $scope.wander = function() {
+    $state.go('tab.book');
+  };
 })
 
 .controller('BookCtrl', function($scope, $ionicScrollDelegate) {
