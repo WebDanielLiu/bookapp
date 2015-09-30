@@ -78,6 +78,10 @@ angular.module('starter.controllers', [])
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
   $scope.chat = Chats.get($stateParams.chatId);
+
+    $scope.exer = function() {
+      alert(1)
+    };
 })
 
 .controller('NotifCtrl', function($scope) {
