@@ -1,4 +1,4 @@
-.left {
+.left-chapters {
     position: absolute;
     left: 0;
     top: 0;
@@ -7,7 +7,7 @@
     width: 15%;
 }
 
-.right {
+.right-pages {
     position: absolute;
     right: 0;
     top: 0;
@@ -20,13 +20,13 @@
     height: 11.11111%;
     position: relative;
 
-  border-right: grey solid 1px;
+    border-right: grey solid 1px;
 }
 
 .chapter.current-chapter {
-  border-right: none;
-  border-top: grey solid 1px;
-  border-bottom: grey solid 1px;
+    border-right: none;
+    border-top: grey solid 1px;
+    border-bottom: grey solid 1px;
     font-weight: bold;
 }
 
@@ -58,3 +58,11 @@
 .item {
     border-left: none;
 }
+
+/* fix for ios ipad transition issue starts */
+[nav-view-transition][nav-view-direction] {
+    background-color: transparent; }
+
+[nav-view-transition="ios"] [nav-view] {
+    box-shadow: none !important; }
+/* fix for ios ipad transition issue ends */
