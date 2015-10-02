@@ -1,12 +1,29 @@
 angular.module('starter.controllers', [])
 
-.controller('WelcomeCtrl', function($scope, $rootScope, $state) {
+.controller('WelcomeCtrl', function($scope, $state, LoginWinService) {
   $scope.login = function() {
-    $rootScope.loginWin.show();
+    LoginWinService.show();
   };
 
   $scope.wander = function() {
     $state.go('tab.book');
+  };
+})
+
+.controller('LoginCtrl', function($scope, $state, UserService, LoginWinService) {
+  $scope.closeLogin = function() {
+    LoginWinService.hide();
+  };
+
+  $scope.login = function() {
+
+  };
+
+  $scope.doLogin = function() {
+    UserService.login();
+    LoginWinService.remove().then(function() {
+      $state.go('tab.book');
+    });
   };
 })
 
@@ -98,8 +115,6 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('AccountCtrl', function($scope) {
-  $scope.settings = {
-    enableFriends: true
-  };
+.controller('AccountCtrl', function($scope, UserService) {
+  $scope.loggedIn = UserService.isLoggedIn();
 });

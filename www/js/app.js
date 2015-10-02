@@ -7,7 +7,7 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngIOS9UIWebViewPatch'])
 
-.run(function($ionicPlatform, $ionicModal, $rootScope) {
+.run(function($ionicPlatform, $state, UserService) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -21,17 +21,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       StatusBar.styleLightContent();
     }
 
-    // Create the login modal that we will use later
-    $ionicModal.fromTemplateUrl('templates/login.html', {
-      scope: $rootScope
-    }).then(function(modal) {
-      $rootScope.loginWin = modal;
-    });
-
-    // Triggered in the login modal to close it
-    $rootScope.closeLogin = function() {
-      $rootScope.loginWin.hide();
-    };
+    if (!UserService.isLoggedIn()) {
+      $state.go('welcome');
+    }
   });
 })
 

@@ -10,8 +10,9 @@
                 </ion-item>
                 <ion-item>My Wallet 我的钱包</ion-item>
                 <ion-item>My Progress 我的进度</ion-item>
-                <ion-item>Item 3</ion-item>
             </ion-list>
+            <button class="button button-stable button-block " ng-if="!loggedIn">Login</button>
+            <button class="button button-stable button-block " ng-if="loggedIn">Logout</button>
             <ion-radio>Radio</ion-radio>
             <label class="item item-input">
                 <span class="input-label">Input</span>
@@ -21,9 +22,7 @@
                 <span class="input-label">Input</span>
                 <select></select>
             </label>
-            <div style="line-height: 250px; border: 1px solid rgb(238, 238, 238); border-radius: 3px; text-align: center; width: 100%; height: auto; background-color: rgb(255, 255, 255);">
-                <i class="icon ion-image" style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;"></i>
-            </div>
+
         </form>
     </ion-content>
 </ion-view>

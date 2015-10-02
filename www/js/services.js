@@ -1,5 +1,42 @@
 angular.module('starter.services', [])
 
+.factory('LoginWinService', function($ionicModal) {
+  var me = this;
+
+  return {
+    show: function() {
+      if (!me.loginWin) {
+        $ionicModal.fromTemplateUrl('templates/login.html').then(function(modal) {
+          me.loginWin = modal;
+          modal.show();
+        });
+      } else {
+        me.loginWin.show();
+      }
+    },
+    hide: function() {
+      me.loginWin.hide();
+    },
+    remove: function() {
+      return me.loginWin.remove().then(function() {
+        me.loginWin = null;
+      });
+    }
+  }
+})
+
+.factory('UserService', function() {
+  var loggedIn = false;
+  return {
+    isLoggedIn: function() {
+      return loggedIn;
+    },
+    login: function() {
+      loggedIn = true;
+    }
+  };
+})
+
 .factory('Chats', function() {
   // Might use a resource here that returns a JSON array
 
