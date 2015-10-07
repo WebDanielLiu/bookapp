@@ -25,14 +25,27 @@ angular.module('starter.services', [])
   }
 })
 
-.factory('UserService', function() {
+.factory('UserService', function($q) {
   var loggedIn = false;
   return {
     isLoggedIn: function() {
       return loggedIn;
     },
     login: function() {
-      loggedIn = true;
+      return $q(function(resolve, reject) {
+        setTimeout(function() {
+          loggedIn = true;
+          resolve();
+        }, 1000);
+      });
+    },
+    logout: function() {
+      return $q(function(resolve, reject) {
+        setTimeout(function() {
+          loggedIn = false;
+          resolve();
+        }, 1000);
+      });
     }
   };
 })

@@ -11,8 +11,8 @@
                 <ion-item>My Wallet 我的钱包</ion-item>
                 <ion-item>My Progress 我的进度</ion-item>
             </ion-list>
-            <button class="button button-stable button-block " ng-if="!loggedIn">Login</button>
-            <button class="button button-stable button-block " ng-if="loggedIn">Logout</button>
+            <button class="button button-stable button-block " ng-if="!UserService.isLoggedIn()" ng-click="login()">Login</button>
+            <button class="button button-stable button-block " ng-if="UserService.isLoggedIn()" ng-click="logout()">Logout</button>
             <ion-radio>Radio</ion-radio>
             <label class="item item-input">
                 <span class="input-label">Input</span>

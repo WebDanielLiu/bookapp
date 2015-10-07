@@ -20,9 +20,10 @@ angular.module('starter.controllers', [])
   };
 
   $scope.doLogin = function() {
-    UserService.login();
-    LoginWinService.remove().then(function() {
-      $state.go('tab.book');
+    UserService.login().then(function() {
+      LoginWinService.remove().then(function() {
+        $state.go('tab.book');
+      });
     });
   };
 })
@@ -115,6 +116,16 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('AccountCtrl', function($scope, UserService) {
-  $scope.loggedIn = UserService.isLoggedIn();
+.controller('AccountCtrl', function($scope, $state, UserService, LoginWinService) {
+  $scope.UserService = UserService;
+
+  $scope.login = function() {
+    LoginWinService.show();
+  };
+
+  $scope.logout = function() {
+    UserService.logout().then(function() {
+      $state.go('welcome');
+    });
+  };
 });
