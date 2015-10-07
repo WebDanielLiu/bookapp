@@ -25,7 +25,7 @@ angular.module('starter.services', [])
   }
 })
 
-.factory('UserService', function($q) {
+.factory('UserService', function($q, $cordovaDevice) {
   var loggedIn = false;
   return {
     isLoggedIn: function() {
@@ -35,6 +35,7 @@ angular.module('starter.services', [])
       return $q(function(resolve, reject) {
         setTimeout(function() {
           loggedIn = true;
+          //alert($cordovaDevice.getUUID());
           resolve();
         }, 1000);
       });
