@@ -78,7 +78,7 @@ angular.module('remix.controllers', [])
   $scope.pages = pages;
 
   $scope.goTo = function(chapter) {
-    Api.getUserInfo(0).then(function(data) {
+    Api.getUserInfo(1).then(function(data) {
       alert(JSON.stringify(data));
     }, function(res) {
       alert('failed')
