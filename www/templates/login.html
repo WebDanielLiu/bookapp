@@ -1,25 +1,62 @@
 <ion-modal-view ng-controller="LoginCtrl">
   <ion-header-bar>
-    <h1 class="title">Login</h1>
+    <h1 class="title"></h1>
     <div class="buttons">
       <button class="button button-clear" ng-click="closeLogin()">Close</button>
     </div>
   </ion-header-bar>
   <ion-content>
     <form ng-submit="doLogin()">
-      <div class="list">
-        <label class="item item-input">
-          <span class="input-label">Username</span>
-          <input type="text" ng-model="loginData.username">
-        </label>
-        <label class="item item-input">
-          <span class="input-label">Password</span>
-          <input type="password" ng-model="loginData.password">
-        </label>
-        <label class="item">
-          <button class="button button-block button-positive" type="submit">Log in</button>
-        </label>
+      <h1 class="text-center">爱读</h1>
+      <h6 class="text-center">好好学习</h6>
+      <h6 class="text-center">让我们一起提高</h6>
+      <div style="margin-top:10px;padding: 0 30px;">
+        <div ng-show="loginMode">
+          <label class="border-bottom item-input invisible">
+            <input type="text" ng-model="loginData.username" placeholder="username/email">
+          </label>
+          <label class="border-bottom item-input">
+            <input type="text" ng-model="loginData.username" placeholder="username/email">
+          </label>
+          <label class="border-bottom item-input">
+            <input type="password" ng-model="loginData.password" placeholder="password">
+          </label>
+        </div>
+        <div ng-show="!loginMode">
+          <label class="border-bottom item-input">
+            <input type="text" ng-model="loginData.username" placeholder="username">
+          </label>
+          <label class="border-bottom item-input">
+            <input type="text" ng-model="loginData.username" placeholder="email">
+          </label>
+          <label class="border-bottom item-input">
+            <input type="password" ng-model="loginData.password" placeholder="password">
+          </label>
+        </div>
+        <button class="button button-block button-positive" type="submit">Log in</button>
+
+        <div class="text-center" ng-show="loginMode">
+          <label ng-click="switch()">注册爱读账户</label>
+        </div>
+        <div class="text-center" ng-show="!loginMode">
+          <label ng-click="switch()">登陆爱读账户</label>
+        </div>
       </div>
     </form>
+
+
   </ion-content>
+  <div style="position:absolute;bottom:10px;text-align: center;width:100%;">
+      <div class="strike" ng-show="loginMode">
+          <span>社交用户登陆</span>
+      </div>
+      <div class="strike" ng-show="!loginMode">
+          <span>社交用户注册</span>
+      </div>
+      <div class="text-center" style="padding-top: 10px;">
+          <span style="font-size:30px" class="ion-social-facebook-outline"></span>
+          <span style="display:inline-block;width:20px"></span>
+          <span style="font-size:30px" class="ion-social-twitter-outline"></span>
+      </div>
+  </div>
 </ion-modal-view>

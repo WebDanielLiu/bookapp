@@ -11,6 +11,12 @@ angular.module('remix.controllers', [])
 })
 
 .controller('LoginCtrl', function($scope, $state, UserService, LoginWinService) {
+  $scope.loginMode = true;
+
+  $scope.switch = function() {
+    $scope.loginMode = !$scope.loginMode;
+  };
+
   $scope.closeLogin = function() {
     LoginWinService.hide();
   };

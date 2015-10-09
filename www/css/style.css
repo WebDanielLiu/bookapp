@@ -1,3 +1,16 @@
+/* fix for ios ipad transition issue starts */
+[nav-view-transition][nav-view-direction] {
+    background-color: transparent; }
+
+[nav-view-transition="ios"] [nav-view] {
+    box-shadow: none !important; }
+/* fix for ios ipad transition issue ends */
+
+
+.border-bottom {
+    border-bottom: 1px solid lightgrey;
+}
+
 .left-chapters {
     position: absolute;
     left: 0;
@@ -59,10 +72,36 @@
     border-left: none;
 }
 
-/* fix for ios ipad transition issue starts */
-[nav-view-transition][nav-view-direction] {
-    background-color: transparent; }
+/* text in hr starts */
+.strike {
+    display: block;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+}
 
-[nav-view-transition="ios"] [nav-view] {
-    box-shadow: none !important; }
-/* fix for ios ipad transition issue ends */
+.strike > span {
+    position: relative;
+    display: inline-block;
+}
+
+.strike > span:before,
+.strike > span:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 9999px;
+    height: 1px;
+    background: lightgrey;
+}
+
+.strike > span:before {
+    right: 100%;
+    margin-right: 15px;
+}
+
+.strike > span:after {
+    left: 100%;
+    margin-left: 15px;
+}
+/* text in hr ends */
