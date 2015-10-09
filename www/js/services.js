@@ -1,4 +1,4 @@
-angular.module('starter.services', [])
+angular.module('remix.services', [])
 
 .factory('LoginWinService', function($ionicModal) {
   var me = this;
@@ -25,7 +25,7 @@ angular.module('starter.services', [])
   }
 })
 
-.factory('UserService', function($q, $cordovaDevice) {
+.factory('UserService', function($q, $http,  $cordovaDevice) {
   var loggedIn = false;
   return {
     isLoggedIn: function() {

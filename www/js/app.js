@@ -1,11 +1,4 @@
-// Ionic Starter App
-
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
-// 'starter.services' is found in services.js
-// 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngCordova', 'ngIOS9UIWebViewPatch'])
+angular.module('remix', ['ionic', 'ngCordova', 'remix.controllers', 'remix.services', 'remix.api', 'remix.ngIOS9UIWebViewPatch'])
 
 .run(function($ionicPlatform, $state, UserService) {
   $ionicPlatform.ready(function() {
@@ -26,6 +19,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     }
   });
 })
+
+.config(['$httpProvider', function ($httpProvider) {
+  delete $httpProvider.defaults.headers.common['X-Requested-With'];
+  $httpProvider.defaults.headers.post['Accept'] = 'application/json, text/javascript';
+  $httpProvider.defaults.headers.post['Content-Type'] = 'application/json; charset=utf-8';
+  $httpProvider.defaults.headers.post['Access-Control-Max-Age'] = '1728000';
+  $httpProvider.defaults.headers.common['Access-Control-Max-Age'] = '1728000';
+  $httpProvider.defaults.headers.common['Accept'] = 'application/json, text/javascript';
+  $httpProvider.defaults.headers.common['Content-Type'] = 'application/json; charset=utf-8';
+  $httpProvider.defaults.useXDomain = true;
+}])
 
 .config(function($stateProvider, $urlRouterProvider) {
 

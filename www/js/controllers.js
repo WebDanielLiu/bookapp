@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('remix.controllers', [])
 
 .controller('WelcomeCtrl', function($scope, $state, LoginWinService) {
   $scope.login = function() {
@@ -28,8 +28,7 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('BookCtrl', function($scope, $ionicScrollDelegate) {
-
+.controller('BookCtrl', function($scope, $ionicScrollDelegate, Api) {
   var itemHeight = 54;
   $scope.onscroll = function() {
     var top = $ionicScrollDelegate.getScrollPosition().top,
@@ -79,6 +78,11 @@ angular.module('starter.controllers', [])
   $scope.pages = pages;
 
   $scope.goTo = function(chapter) {
+    Api.getUserInfo(0).then(function(data) {
+      alert(JSON.stringify(data));
+    }, function(res) {
+      alert('failed')
+    });
     $ionicScrollDelegate.scrollTo(0, chapters.indexOf(chapter) * 20 * itemHeight);
   };
 })

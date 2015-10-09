@@ -1,4 +1,4 @@
-angular.module('ngIOS9UIWebViewPatch', ['ng']).config(['$provide', function($provide) {
+angular.module('remix.ngIOS9UIWebViewPatch', ['ng']).config(['$provide', function($provide) {
   'use strict';
 
   $provide.decorator('$browser', ['$delegate', '$window', function($delegate, $window) {

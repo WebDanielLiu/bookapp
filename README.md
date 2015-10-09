@@ -7,6 +7,7 @@
 1. bower install ngCordova
 1. run the following commands to add plugins
     1. cordova plugin add org.apache.cordova.device
+    1. cordova plugin add cordova-plugin-crosswalk-webview
     1. cordova plugin add https://github.com/wildabeast/BarcodeScanner.git
     1. cordova plugin add https://github.com/danwilson/google-analytics-plugin.git
     1. cordova plugin add https://github.com/litehelpers/Cordova-sqlite-storage.git
