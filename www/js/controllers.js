@@ -34,62 +34,41 @@ angular.module('remix.controllers', [])
   };
 })
 
-.controller('BookCtrl', function($scope, $ionicScrollDelegate, Api) {
+.controller('BookCtrl', function($scope, $ionicScrollDelegate, BookService, Api) {
   var itemHeight = 54;
   $scope.onscroll = function() {
-    var top = $ionicScrollDelegate.getScrollPosition().top,
-        idx = Math.floor(Math.floor(top / itemHeight) / 20);
+    var top = $ionicScrollDelegate.getScrollPosition().top;
 
-    //console.log(idx)
-    chapters.forEach(function(ch, i) {
-        ch.current = i == idx;
-    });
-    if (idx < 0) {
-      idx = 0;
-    }
-    chapters[idx].current = true;
-    $scope.$apply();
+    setTimeout(function() {
+      var newTop = $ionicScrollDelegate.getScrollPosition().top;
+      if (newTop == top) {
+        var chapters = $scope.chapters;
+        var idx = Math.floor(Math.floor(newTop / itemHeight) / 10);
+
+        chapters.forEach(function(ch, i) {
+          ch.current = i == idx;
+        });
+        if (idx < 0) {
+          idx = 0;
+        }
+        $scope.currentChapter = chapters[idx].name;
+        $scope.$apply();
+      }
+    }, 100);
   };
 
-  var chapters = [{
-    name: 'intro',
-    current: true
-  }, {
-    name: 'l'
-  }, {
-    name: 'ee'
-  }, {
-    name: 'v'
-  }, {
-    name: 'th'
-  }, {
-    name: 'e'
-  }, {
-    name: 'a'
-  }, {
-    name: 'oo'
-  }, {
-    name: 'r'
-  }];
-  $scope.chapters = chapters;
-
-  var pages = [];
-  for (var i=0; i<180; i++) {
-    pages.push({
-      page: i+1,
-      chapter: chapters[Math.floor(i/20)]
-    });
-  }
-
-  $scope.pages = pages;
+  $scope.chapters = BookService.getChapters();
+  $scope.currentChapter = $scope.chapters[0].name;
+  $scope.pages = BookService.getPages();
 
   $scope.goTo = function(chapter) {
-    Api.getUserInfo(1).then(function(data) {
-      alert(JSON.stringify(data));
-    }, function(res) {
-      alert('failed')
-    });
-    $ionicScrollDelegate.scrollTo(0, chapters.indexOf(chapter) * 20 * itemHeight);
+    //Api.getUserInfo(1).then(function(data) {
+    //  alert(JSON.stringify(data));
+    //}, function(res) {
+    //  alert('failed')
+    //});
+    $scope.currentChapter = chapter.name;
+    $ionicScrollDelegate.scrollTo(0, $scope.chapters.indexOf(chapter) * 10 * itemHeight);
   };
 })
 
