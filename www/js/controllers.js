@@ -42,19 +42,20 @@ angular.module('remix.controllers', [])
     setTimeout(function() {
       var newTop = $ionicScrollDelegate.getScrollPosition().top;
       if (newTop == top) {
-        var chapters = $scope.chapters;
-        var idx = Math.floor(Math.floor(newTop / itemHeight) / 10);
+        var chapters = $scope.chapters,
+            idx = Math.floor(newTop / itemHeight),
+            i;
 
-        chapters.forEach(function(ch, i) {
-          ch.current = i == idx;
-        });
-        if (idx < 0) {
-          idx = 0;
+        for (i=0; i<chapters.length; i++) {
+          if (idx < chapters[i].prevPages) {
+            break;
+          }
         }
-        $scope.currentChapter = chapters[idx].name;
+
+        $scope.currentChapter = chapters[i-1].name;
         $scope.$apply();
       }
-    }, 100);
+    }, 300);
   };
 
   $scope.chapters = BookService.getChapters();
@@ -67,8 +68,8 @@ angular.module('remix.controllers', [])
     //}, function(res) {
     //  alert('failed')
     //});
-    $scope.currentChapter = chapter.name;
-    $ionicScrollDelegate.scrollTo(0, $scope.chapters.indexOf(chapter) * 10 * itemHeight);
+    //$scope.currentChapter = chapter.name;
+    $ionicScrollDelegate.scrollTo(0, chapter.prevPages * itemHeight);
   };
 })
 
