@@ -2,12 +2,13 @@
   <ion-content scroll="false">
 
     <div class="left-chapters">
-      <div ng-repeat="chapter in chapters" ng-class="['chapter', chapter.name === currentChapter ? 'current-chapter':'']" ng-class="chapter" ng-click="goTo(chapter)"><div>{{chapter.name}}</div></div>
+      <div ng-repeat="chapter in chapters" ng-class="['chapter', chapter.name === currentChapter ? 'current-chapter':'', chapter.cls]" ng-class="chapter" ng-click="goTo(chapter)"><div>{{chapter.name}}</div></div>
     </div>
     <div class="right-pages">
       <ion-content on-scroll="onscroll()">
         <ion-item class="item-icon-right" collection-repeat="page in pages" ng-class="page.chapter" href="#/tab/book/{{page.page}}">
-          {{page.chapterName}} - {{page.desc}}
+          {{page.desc}}
+          <span class="icon note-icon" ng-class="page.icon"></span>
           <i class="icon page-number">{{page.page}}</i>
           <i class="icon ion-chevron-right icon-accessory"></i>
         </ion-item>

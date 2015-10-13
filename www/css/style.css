@@ -17,7 +17,7 @@
     top: 0;
     bottom: 0;
     height: 100%;
-    width: 15%;
+    /*width: 15%;*/
 }
 
 .right-pages {
@@ -26,21 +26,53 @@
     top: 0;
     bottom: 0;
     height: 100%;
-    left: 15%;
+    left: 50px;
 }
 
 .chapter {
+    width: 50px;
     height: 11.11111%;
+    /*max-height: 50px;*/
     position: relative;
-
-    border-right: grey solid 1px;
+    /*border-right: grey solid 1px;*/
+    background-color: lightgrey;
+    /*margin-bottom: 1px;*/
+    border-bottom: 1px solid white;
 }
 
 .chapter.current-chapter {
-    border-right: none;
-    border-top: grey solid 1px;
-    border-bottom: grey solid 1px;
-    font-weight: bold;
+    /*border-right: none;*/
+    /*border-top: grey solid 1px;*/
+    /*border-bottom: grey solid 1px;*/
+    /*font-weight: bold;*/
+    color: white;
+}
+.chapter.current-chapter.intro {
+    background-color: #D46E74;
+}
+.chapter.current-chapter.l {
+    background-color: #7CC165;
+}
+.chapter.current-chapter.th {
+    background-color: #E7C658;
+}
+.chapter.current-chapter.ee {
+    background-color: #AD6796;
+}
+.chapter.current-chapter.f {
+    background-color: #DC7A4B;
+}
+.chapter.current-chapter.oo {
+    background-color: #ACCC5E;
+}
+.chapter.current-chapter.e {
+    background-color: #5379AD;
+}
+.chapter.current-chapter.n {
+    background-color: #5AB9CA;
+}
+.chapter.current-chapter.a {
+    background-color: #5CB091;
 }
 
 .chapter>div {
@@ -51,7 +83,24 @@
 }
 
 .item-icon-right .icon.page-number {
-    right: 40px;
+    border: none;
+    right: 35px;
+    color: lightgrey;
+}
+
+.icon.note-icon {
+    width: 50px;
+    height: 50px;
+    right: 90px;
+    background-size: 50px;
+}
+
+.note-icon.intro {
+    background-image: url('../img/note-icon/Intro.png');
+}
+
+.note-icon.mistake {
+    background-image: url('../img/note-icon/Study of Original Mistakes.png');
 }
 
 .slider {
