@@ -41,7 +41,7 @@ angular.module('remix.controllers', [])
 
     setTimeout(function() {
       var newTop = $ionicScrollDelegate.getScrollPosition().top;
-      if (newTop == top) {
+      if (Math.abs(newTop - top) < 10) {
         var chapters = $scope.chapters,
             idx = Math.floor(newTop / itemHeight),
             i;
@@ -70,13 +70,13 @@ angular.module('remix.controllers', [])
     //  alert('failed')
     //});
     $scope.currentChapter = chapter.name;
-    $ionicScrollDelegate.scrollTo(0, chapter.prevPages * itemHeight);
+    $ionicScrollDelegate.scrollTo(0, chapter.prevPages * itemHeight, true);
   };
 })
 
 .controller('PageCtrl', function($scope, $rootScope) {
   $scope.play = function() {
-    $rootScope.loginWin.show();
+    //$rootScope.loginWin.show();
   };
 })
 
