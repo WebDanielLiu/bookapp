@@ -50,6 +50,10 @@
     transform: translate(-50%, -50%);
 }
 
+.item-icon-right .icon.page-number {
+    right: 40px;
+}
+
 .slider {
     height: 100%;
 }

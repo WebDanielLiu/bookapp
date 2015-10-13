@@ -34,7 +34,7 @@ angular.module('remix.controllers', [])
   };
 })
 
-.controller('BookCtrl', function($scope, $ionicScrollDelegate, BookService, Api) {
+.controller('BookCtrl', function($scope, $ionicScrollDelegate, $ionicNavBarDelegate, BookService, Api) {
   var itemHeight = 54;
   $scope.onscroll = function() {
     var top = $ionicScrollDelegate.getScrollPosition().top;
@@ -53,9 +53,10 @@ angular.module('remix.controllers', [])
         }
 
         $scope.currentChapter = chapters[i-1].name;
+        $ionicNavBarDelegate.title('爱读 - ' + chapters[i-1].name);
         $scope.$apply();
       }
-    }, 300);
+    }, 200);
   };
 
   $scope.chapters = BookService.getChapters();
@@ -68,7 +69,7 @@ angular.module('remix.controllers', [])
     //}, function(res) {
     //  alert('failed')
     //});
-    //$scope.currentChapter = chapter.name;
+    $scope.currentChapter = chapter.name;
     $ionicScrollDelegate.scrollTo(0, chapter.prevPages * itemHeight);
   };
 })

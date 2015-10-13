@@ -1,4 +1,4 @@
-<ion-view view-title="Book">
+<ion-view view-title="爱读 - Intro">
   <ion-content scroll="false">
 
     <div class="left-chapters">
@@ -6,8 +6,10 @@
     </div>
     <div class="right-pages">
       <ion-content on-scroll="onscroll()">
-        <ion-item collection-repeat="page in pages" ng-class="page.chapter" href="#/tab/book/{{page.page}}">
-          {{page.chapterName}} - {{page.desc}} P{{page.page}}
+        <ion-item class="item-icon-right" collection-repeat="page in pages" ng-class="page.chapter" href="#/tab/book/{{page.page}}">
+          {{page.chapterName}} - {{page.desc}}
+          <i class="icon page-number">{{page.page}}</i>
+          <i class="icon ion-chevron-right icon-accessory"></i>
         </ion-item>
       </ion-content>
     </div>
