@@ -1,0 +1,139 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icomoon.eot?kvbwle');
+	src:url('fonts/icomoon.eot?kvbwle#iefix') format('embedded-opentype'),
+		url('fonts/icomoon.ttf?kvbwle') format('truetype'),
+		url('fonts/icomoon.woff?kvbwle') format('woff'),
+		url('fonts/icomoon.svg?kvbwle#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-RemindersAirflow:before {
+	content: "\e803";
+}
+.icon-RemindersReferenceoo:before {
+	content: "\e804";
+}
+.icon-RemindersEvaluation:before {
+	content: "\e805";
+}
+.icon-PositionsTeeth:before {
+	content: "\e806";
+}
+.icon-PuttingEverythingtogether:before {
+	content: "\e807";
+}
+.icon-RemindersFreeze:before {
+	content: "\e808";
+}
+.icon-PronunciationComparison:before {
+	content: "\e809";
+}
+.icon-RemindersReferencel:before {
+	content: "\e80a";
+}
+.icon-Thingsyoushouldknow:before {
+	content: "\e80b";
+}
+.icon-PositionsLips:before {
+	content: "\e80c";
+}
+.icon-SelfEvaluation:before {
+	content: "\e80d";
+}
+.icon-WordsInvolving:before {
+	content: "\e80e";
+}
+.icon-PositionsTongue:before {
+	content: "\e80f";
+}
+.icon-RemindersSoundDown:before {
+	content: "\e810";
+}
+.icon-Spelling .path1:before {
+	content: "\e811";
+	color: rgb(255, 255, 255);
+}
+.icon-Spelling .path2:before {
+	content: "\e812";
+	margin-left: -1em;
+	color: rgb(35, 24, 21);
+}
+.icon-StudyofOriginalMistakes:before {
+	content: "\e813";
+}
+.icon-RemindersVibration .path1:before {
+	content: "\e814";
+	color: rgb(35, 24, 21);
+}
+.icon-RemindersVibration .path2:before {
+	content: "\e815";
+	margin-left: -1em;
+	color: rgb(35, 24, 21);
+}
+.icon-RemindersVibration .path3:before {
+	content: "\e816";
+	margin-left: -1em;
+	color: rgb(255, 255, 255);
+}
+.icon-RemindersVibration .path4:before {
+	content: "\e817";
+	margin-left: -1em;
+	color: rgb(255, 255, 255);
+}
+.icon-RemindersHoldBreath:before {
+	content: "\e818";
+}
+.icon-RemindersNoAirflow:before {
+	content: "\e819";
+}
+.icon-RemindersReferenceee:before {
+	content: "\e81a";
+}
+.icon-RemindersReferencee .path1:before {
+	content: "\e81b";
+	color: rgb(35, 24, 21);
+}
+.icon-RemindersReferencee .path2:before {
+	content: "\e81c";
+	margin-left: -1em;
+	color: rgb(255, 255, 255);
+}
+.icon-RemindersReferencee .path3:before {
+	content: "\e81d";
+	margin-left: -1em;
+	color: rgb(35, 24, 21);
+}
+.icon-RemindersReferencea .path1:before {
+	content: "\e800";
+	color: rgb(35, 24, 21);
+}
+.icon-RemindersReferencea .path2:before {
+	content: "\e801";
+	margin-left: -1em;
+	color: rgb(255, 255, 255);
+}
+.icon-RemindersReferencea .path3:before {
+	content: "\e802";
+	margin-left: -1em;
+	color: rgb(35, 24, 21);
+}
+.icon-qrcode:before {
+	content: "\e81e";
+}
+

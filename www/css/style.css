@@ -89,19 +89,23 @@
 }
 
 .icon.note-icon {
-    width: 50px;
-    height: 50px;
     right: 90px;
     background-size: 50px;
 }
 
-.note-icon.intro {
-    background-image: url('../img/note-icon/Intro.png');
+.icon-StudyofOriginalMistakes {
+    color: #7CC165;  /* green */
 }
 
-.note-icon.mistake {
-    background-image: url('../img/note-icon/Study of Original Mistakes.png');
+.icon-RemindersReferencea, icon-RemindersReferencee {
+    colro: #B37AA6;  /* purple */
 }
+
+#EF8993   pink
+
+
+
+#FAC551   yellow
 
 .slider {
     height: 100%;
