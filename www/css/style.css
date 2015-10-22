@@ -97,15 +97,12 @@
     color: #7CC165;  /* green */
 }
 
-.icon-RemindersReferencea, icon-RemindersReferencee {
+.icon-RemindersReferencea, .icon-RemindersReferencee {
     colro: #B37AA6;  /* purple */
 }
 
-#EF8993   pink
-
-
-
-#FAC551   yellow
+/*#EF8993   pink*/
+/*#FAC551   yellow*/
 
 .slider {
     height: 100%;
