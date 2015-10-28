@@ -61,6 +61,7 @@ angular.module('remix.controllers', [])
 
   $scope.chapters = BookService.getChapters();
   $scope.currentChapter = $scope.chapters[0].name;
+
   $scope.pages = BookService.getPages();
 
   $scope.goTo = function(chapter) {
@@ -74,12 +75,55 @@ angular.module('remix.controllers', [])
   };
 })
 
-.controller('PageCtrl', function($scope, $rootScope) {
-  $scope.play = function() {
-    //$rootScope.loginWin.show();
+.controller('PageCtrl', function($scope, $state, $stateParams, BookService) {
+  //var baseImg ='../img/', baseMedia = '../media/';
+  var baseImg ='/android_asset/www/img/', baseMedia = '/android_asset/www/media/';
+  var page = $stateParams.page;
+
+  var medias = BookService.getPageMedias(page);
+
+  $scope.showAudioPlayer = false;
+  $scope.audioImg = baseImg + medias[0].imgSrc;
+  $scope.audioSrc = baseMedia + medias[0].mediaSrc;
+  $scope.videoImg = baseImg + medias[1].imgSrc;
+  BookService.videoSrc = baseMedia + medias[1].mediaSrc;
+
+  function pauseAllPlaying() {
+    var i, elements = document.querySelectorAll('.media');
+
+    for(i = 0;i < elements.length; i++) {
+      if (!elements[i].paused) {
+        elements[i].pause();
+      }
+    }
+  }
+
+  $scope.playAudio = function() {
+
+    var element = document.getElementById("myaudio");
+    $scope.showAudioPlayer = !$scope.showAudioPlayer;
+
+    if($scope.showAudioPlayer){
+      pauseAllPlaying();
+      element.play();
+    } else {
+      element.pause();
+    }
+  };
+
+  $scope.playVideo = function() {
+    pauseAllPlaying();
+    $state.go('tab.play');
+
+
+
   };
 })
-
+.controller('PlayCtrl', function($scope, $stateParams, BookService ) {
+    var element = document.getElementById("myvideo");
+    element.webkitRequestFullscreen();
+    $scope.videoSrc = BookService.videoSrc;
+})
 .controller('ExerCtrl', function($scope, Chats) {
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.

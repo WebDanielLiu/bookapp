@@ -1,5 +1,21 @@
+<!--<ion-view view-title="Page">-->
+    <!--<ion-content class="padding">-->
+        <!--<button class="button button-block button-positive" ng-click="play()">Play</button>-->
+    <!--</ion-content>-->
+<!--</ion-view>-->
+
 <ion-view view-title="Page">
-    <ion-content class="padding">
-        <button class="button button-block button-positive" ng-click="play()">Play</button>
+    <ion-content>
+        <div class="img">
+            <img ng-src="{{audioImg}}">
+        </div>
+        <ion-item>
+            <audio id="myaudio" src="{{audioSrc}}" controls ng-show="showAudioPlayer"></audio>
+            <button  class="button button-clear ion-ios-volume-high button-energized play" ng-click="playAudio()"></button>
+        </ion-item>
+        <div class="img">
+            <img ng-src="{{videoImg}}">
+        </div>
+        <button  class="button button-clear ion-ios-volume-high button-assertive play" ng-click="playVideo()"></button>
     </ion-content>
 </ion-view>

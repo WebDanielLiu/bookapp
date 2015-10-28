@@ -71,6 +71,15 @@ angular.module('remix', ['ionic', 'ngCordova', 'remix.controllers', 'remix.servi
       }
     }
   })
+    .state('tab.play', {
+      url:'/play',
+      views: {
+        'tab-book': {
+          templateUrl: 'templates/tab-play.html',
+          controller: 'PlayCtrl'
+        }
+      }
+    })
 
   .state('tab.exer', {
     url: '/exer',
